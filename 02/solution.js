@@ -1,10 +1,7 @@
 // https://adventofcode.com/2024/day/2
 
-import { readFileSync } from 'node:fs';
-
-function part1() {
-  const data = readFileSync('./02/data.txt', 'utf8');
-  const reports = data
+export function part1(input) {
+  const reports = input
     .split('\n')
     .map((line) => line.split(/\s+/))
     .map((levels) => levels.map((l) => Number(l)));
@@ -45,7 +42,5 @@ function part1() {
       safeReports++;
     }
   }
-  console.log(safeReports);
+  return safeReports;
 }
-
-part1();
